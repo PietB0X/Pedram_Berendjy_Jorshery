@@ -1,0 +1,83 @@
+# Cursor AI — Projektregeln · Portfolio Pedram Berendjy Jorshery
+
+## Was dieses Projekt ist
+
+Statische Portfolio-Website. Kein Build-Schritt, kein Bundler.
+React 18 + Babel Standalone via CDN. JSX-Dateien werden direkt im Browser kompiliert.
+
+## Dateistruktur & Zuständigkeiten
+
+- `index.html` — Nur HTML-Shell + Script-Tags. Hier nichts ändern außer Titel/Meta.
+- `styles.css` — Einzige CSS-Datei. Kein Tailwind, kein CSS-in-JS. CSS-Variablen für alle Farben.
+- `i18n.js` — Alle Texte. Zweisprachig (DE/EN). `window.STRINGS.de` / `window.STRINGS.en`.
+- `tweaks-panel.jsx` — Floating-Panel (Taste T). Nur UI-Controls, keine Business-Logik.
+- `heroes.jsx` — 3 Hero-Varianten. Exportiert nach `window`: `HeroCardStack`, `HeroConstellation`, `HeroDepthType`, `HeroTicker`.
+- `sections.jsx` — Alle Sektionen + Nav. Exportiert nach `window`.
+- `app.jsx` — Root. Hält State für `lang` und `heroVariant`. Rendert alles.
+
+## Coding-Regeln
+
+1. **Kein TypeScript** — Plain JavaScript / JSX.
+2. **Kein import/export** — Dateien kommunizieren via `window.*`. Beispiel: `Object.assign(window, { MeineKomponente })` am Dateiende.
+3. **Keine npm-Pakete** — Alles läuft ohne `node_modules`.
+4. **Klassen, keine Inline-Styles für Layout** — Inline-Styles nur für dynamische Werte (Tilt-Winkel, Farb-Variablen per State).
+5. **CSS-Variablen verwenden** — Niemals Hardcoded-Farbwerte in JSX oder CSS-Regeln außerhalb `:root`.
+6. **`<Reveal>`-Wrapper** für neue animierte Elemente verwenden (definiert in `sections.jsx`).
+7. **i18n immer dual** — Jeder neue Text muss in `window.STRINGS.de` UND `window.STRINGS.en` eingetragen werden.
+
+## Design-System
+
+```
+Farben:
+  --cream   #f1e6cf   Hintergrund
+  --paper   #fbf5e7   Cards, erhöhte Flächen
+  --ink     #1a0f08   Text, Borders
+  --ink-soft #5a3e2a  Sekundärtext
+  --accent  #ee4814   Vermillion — Highlights, CTAs
+  --coral   #ff8a7a
+  --yellow  #f4c430
+
+Schriften:
+  --serif   Instrument Serif — Display, italic Headlines
+  --sans    Geist — Fließtext, UI
+  --mono    JetBrains Mono — Labels, Chips, Monospace
+
+Hilfsklassen:
+  .display-italic   → Instrument Serif italic
+  .tc-mono          → JetBrains Mono, uppercase, 11px, letter-spacing 0.04em
+  .reveal           → Scroll-Animation (opacity + translateY)
+  .reveal--in       → Eingeblendet
+  .chip             → Tag/Badge-Stil
+  .chip--ghost      → Transparente Variante
+```
+
+## Inhalt anpassen
+
+**Texte:** `i18n.js` → `window.STRINGS.de` / `.en`
+
+**Projekte:** `i18n.js` → `work.items[]`
+```js
+{ slug, name, tag, year, role, stack[], one, problem, process, outcome, metrics[] }
+```
+
+**Projektcover:** `sections.jsx` → `ProjectCover({ idx })` — SVG per Index
+
+**Hero-Variante wechseln:** Nav-Button rechts oben oder Taste `T`
+
+## Was NICHT geändert werden sollte
+
+- Integrity-Hashes der CDN-Skripte in `index.html`
+- Die `Object.assign(window, {...})`-Exports am Ende jeder `.jsx`-Datei
+- Das `window.STRINGS`-Interface — App und Komponenten erwarten genau diese Struktur
+
+## Deployment
+
+Statischer Host reicht: Netlify, Vercel, GitHub Pages, nginx.
+`file://` funktioniert NICHT (Babel-Fetch blockiert). Immer über HTTP(S) öffnen.
+
+Lokal starten:
+```bash
+npx serve .
+# oder
+python3 -m http.server 3000
+```

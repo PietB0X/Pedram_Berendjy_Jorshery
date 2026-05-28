@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(cp \"/Users/pedramberendjy/.claude/projects/-Users-pedramberendjy-Documents-GitHub-Portfolio-Claude-Portfolio/9acb7d1c-5141-40df-b03e-bece5cd80706/tool-results/webfetch-1779803908122-56co26.bin\" /tmp/design_file.gz)",
+      "Bash(gunzip -f /tmp/design_file.gz)",
+      "Read(//tmp/**)",
+      "Bash(mkdir -p /tmp/design_extract)",
+      "Bash(tar -xf /tmp/design_file -C /tmp/design_extract)",
+      "Bash(find /tmp/design_extract -type f | sort)",
+      "Bash(ls -la \"/Users/pedramberendjy/Documents/GitHub/Portfolio/Claude Portfolio/\" && echo \"---\" && ls -la \"/Users/pedramberendjy/Documents/GitHub/Portfolio/\")",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

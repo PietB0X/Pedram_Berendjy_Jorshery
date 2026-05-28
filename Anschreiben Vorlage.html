@@ -1,0 +1,1146 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Anschreiben — Pedram Berendjy Jorshery</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://api.fontshare.com/v2/css?f[]=geist@400,500,600,700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --cream:  #f1e6cf;
+    --paper:  #fdfaf2;
+    --ink:    #1a0f08;
+    --ink-soft: #5a3e2a;
+    --accent: #ee4814;
+    --coral:  #ff8a7a;
+    --yellow: #f4c430;
+    --line:   rgba(26,15,8,0.18);
+    --serif:  "Instrument Serif", "GFS Didot", Georgia, serif;
+    --sans:   "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif;
+    --mono:   "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    background:
+      radial-gradient(900px 600px at 10% -5%, rgba(238,72,20,0.08), transparent 60%),
+      radial-gradient(700px 500px at 95% 100%, rgba(244,196,48,0.10), transparent 60%),
+      var(--cream);
+    min-height: 100vh;
+    padding: 40px 16px 80px;
+  }
+
+  ::selection { background: var(--ink); color: var(--cream); }
+  em { font-family: var(--serif); font-style: italic; font-weight: 400; }
+  .mono { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  /* ──────────────────────────────────────────────── */
+  /* Toolbar                                          */
+  /* ──────────────────────────────────────────────── */
+  .toolbar {
+    max-width: 794px;
+    margin: 0 auto 18px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 14px;
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(26,15,8,0.08);
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .toolbar-title {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-right: 6px;
+  }
+  .toolbar-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+  .toolbar-spacer { flex: 1; }
+  .btn {
+    appearance: none;
+    border: 1.5px solid var(--ink);
+    background: var(--cream);
+    color: var(--ink);
+    font: inherit;
+    padding: 6px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  }
+  .btn:hover { background: var(--ink); color: var(--cream); }
+  .btn--primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .btn--primary:hover { background: var(--ink); border-color: var(--ink); }
+  .btn--ghost { background: transparent; }
+  .btn:active { transform: translateY(1px); }
+  .font-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(241,230,207,0.55);
+  }
+  .font-control input {
+    width: 92px;
+    accent-color: var(--accent);
+  }
+  .font-control output {
+    min-width: 34px;
+    color: var(--accent);
+  }
+
+  .hint {
+    max-width: 794px;
+    margin: 0 auto 18px;
+    padding: 10px 16px;
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    background: rgba(253,250,242,0.5);
+  }
+  .hint b { color: var(--ink); font-weight: 600; }
+
+  /* ──────────────────────────────────────────────── */
+  /* Paper                                            */
+  /* ──────────────────────────────────────────────── */
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    max-width: calc(100vw - 32px);
+    margin: 0 auto;
+    background: var(--paper);
+    color: var(--ink);
+    box-shadow:
+      0 1px 0 rgba(26,15,8,0.08),
+      0 30px 60px -20px rgba(26,15,8,0.25),
+      0 18px 36px -18px rgba(26,15,8,0.18);
+    border-radius: 4px;
+    padding: 22mm 22mm 22mm 22mm;
+    position: relative;
+    font-size: 11pt;
+    line-height: 1.55;
+    overflow: hidden;
+  }
+
+  /* Subtle grid backdrop on the paper, like portfolio */
+  .sheet::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(26,15,8,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26,15,8,0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0.3));
+  }
+  .sheet > * { position: relative; }
+
+  /* ──────────────────────────────────────────────── */
+  /* Header                                           */
+  /* ──────────────────────────────────────────────── */
+  .head {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    column-gap: 26px;
+    row-gap: 20px;
+    align-items: stretch;
+    padding-bottom: 8mm;
+    border-bottom: 2px solid var(--ink);
+  }
+  .head-portrait-wrap {
+    align-self: stretch;
+    width: 148px;
+    flex-shrink: 0;
+  }
+  .head-portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 10px;
+    border: 1.5px solid var(--ink);
+    display: block;
+  }
+  .head > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+  .head > .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-left: 1px solid var(--line);
+    padding-left: 14px;
+    width: 158px;
+  }
+  .brand-mark {
+    position: absolute;
+    top: 14mm;
+    left: 22mm;
+    display: inline-flex; align-items: center; gap: 8px;
+    margin: 0;
+    pointer-events: none;
+  }
+  .brand-glyph {
+    width: 22px; height: 22px;
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    background: var(--accent);
+    color: var(--paper);
+    line-height: 1;
+  }
+  .brand-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .name {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 40pt;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    margin: 0;
+    padding-bottom: 2px;
+  }
+  .name em { color: var(--accent); display: inline-block; }
+  .name em:nth-of-type(1) { transform: translateX(10px); }
+  .name em:nth-of-type(2) { transform: translateX(18px); }
+  .role {
+    margin-top: 6px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 12.5pt;
+    line-height: 1.15;
+    color: var(--ink-soft);
+  }
+
+  .contact {
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 7.5pt;
+    line-height: 1.3;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+  .contact div {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .contact div { height: fit-content; }
+  /* Keep email on one line (uniform sizing via .contact) */
+  .contact a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--line);
+    white-space: nowrap;
+  }
+  .contact-label {
+    color: var(--accent);
+    margin-bottom: 2px;
+    font-size: inherit;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .contact-address { margin-top: 6px; }
+
+  /* ──────────────────────────────────────────────── */
+  /* Letter body                                      */
+  /* ──────────────────────────────────────────────── */
+  .meta-row {
+    margin-top: 8mm;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: start;
+  }
+  .recipient-block {
+    display: flex; flex-direction: column;
+    gap: 0;
+    font-family: var(--mono);
+    font-size: 8.5pt;
+    line-height: 1.3;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+  .recipient-block .mono { color: var(--accent); margin-bottom: 2px; }
+  .date-block {
+    text-align: right;
+    line-height: 1.3;
+  }
+  .date-block .mono { color: var(--accent); margin-bottom: 2px; }
+  .date-line {
+    font-family: var(--mono);
+    font-style: normal;
+    font-size: 8.5pt;
+    line-height: 1.3;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+
+  .subject {
+    margin-top: 12mm;
+    padding: 7px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: flex; gap: 14px; align-items: baseline;
+  }
+  .subject-label {
+    font-family: var(--mono);
+    font-size: 8pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .subject-text {
+    flex: 1;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14pt;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+
+  .salutation {
+    margin-top: 10mm;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14pt;
+    line-height: 1.2;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .salutation em { color: var(--accent); }
+
+  .letter {
+    margin-top: 6mm;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5mm;
+    font-size: var(--letter-font-size, 11pt);
+    line-height: 1.55;
+    color: var(--ink);
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
+  .letter p {
+    margin: 0;
+    text-wrap: pretty;
+  }
+  .letter-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .letter-item > p { flex: 1; min-width: 0; }
+  .letter-item-actions {
+    flex-shrink: 0;
+    padding-top: 2px;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+  .letter-item:hover .letter-item-actions,
+  .letter-item:focus-within .letter-item-actions { opacity: 1; }
+  .letter-btn {
+    appearance: none;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink-soft);
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 16px;
+    line-height: 1;
+    padding: 0;
+  }
+  .letter-btn:hover:not(:disabled) {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  .letter-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+  .letter-toolbar {
+    max-width: 210mm;
+    margin: 4px auto 0;
+    padding: 0 22mm;
+    display: flex;
+    justify-content: flex-end;
+  }
+  /* (removed empty ::first-letter rule) */
+
+  .closing {
+    margin-top: 8mm;
+  }
+  .closing-words {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14pt;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .closing-name {
+    font-family: var(--serif);
+    font-size: 22pt;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin-top: 6px;
+  }
+  /* ──────────────────────────────────────────────── */
+  /* Footer + decorative                              */
+  /* ──────────────────────────────────────────────── */
+  .foot {
+    margin-top: 10mm;
+    padding-top: 6mm;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 9pt;
+    color: var(--ink-soft);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .foot-mark {
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .foot-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+  /* Decorative corner — paper-craft accent */
+  .corner-mark {
+    position: absolute;
+    top: 0; right: 0;
+    width: 64px; height: 64px;
+    pointer-events: none;
+  }
+  .corner-mark::before, .corner-mark::after {
+    content: "";
+    position: absolute;
+  }
+  .corner-mark::before {
+    top: 0; right: 0;
+    width: 64px; height: 64px;
+    background: var(--accent);
+    clip-path: polygon(100% 0, 100% 100%, 0 0);
+  }
+  .corner-mark::after {
+    top: 0; right: 0;
+    width: 22px; height: 22px;
+    background: var(--paper);
+    clip-path: polygon(100% 0, 100% 100%, 0 0);
+  }
+
+  /* ──────────────────────────────────────────────── */
+  /* Editable affordance                              */
+  /* ──────────────────────────────────────────────── */
+  [contenteditable="true"] {
+    outline: none;
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+    border-radius: 4px;
+  }
+  body:not(.is-print) [contenteditable="true"]:hover {
+    background: rgba(244,196,48,0.18);
+    box-shadow: 0 0 0 2px rgba(244,196,48,0.4);
+  }
+  body:not(.is-print) [contenteditable="true"]:focus {
+    background: rgba(244,196,48,0.28);
+    box-shadow: 0 0 0 2px var(--yellow);
+  }
+  [contenteditable="true"]:empty::before {
+    content: attr(data-placeholder);
+    color: var(--ink-soft);
+    opacity: 0.5;
+    font-style: italic;
+  }
+
+  /* ──────────────────────────────────────────────── */
+  /* Print                                            */
+  /* ──────────────────────────────────────────────── */
+  /* Temporary class for print-width measurement in JS */
+  .a4-measure {
+    width: 210mm !important;
+    max-width: 210mm !important;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 18mm 20mm !important;
+  }
+
+  @page { size: A4; margin: 0; }
+
+  @media print {
+    html, body {
+      background: #fff !important;
+      padding: 0 !important;
+    }
+    .toolbar, .hint { display: none !important; }
+    .sheet {
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      width: 210mm;
+      min-height: unset;
+      max-width: none;
+      margin: 0;
+      padding: 18mm 20mm;
+      line-height: 1.45;
+    }
+    .sheet::before { display: none; }
+    [contenteditable] { background: transparent !important; box-shadow: none !important; }
+    /* Tighter spacing for single-page fit */
+    .head { padding-bottom: 6mm; column-gap: 24px; row-gap: 16px; }
+    .meta-row { margin-top: 6mm; gap: 10px; }
+    .subject { margin-top: 8mm; padding: 5px 0; }
+    .salutation { margin-top: 7mm; }
+    .letter { margin-top: 4mm; gap: 3.5mm; }
+    .letter-item-actions, .letter-toolbar { display: none !important; }
+    .closing { margin-top: 6mm; }
+    .foot { margin-top: 6mm; }
+  }
+
+  /* ──────────────────────────────────────────────── */
+  /* Responsive on small screens                      */
+  /* ──────────────────────────────────────────────── */
+  @media (max-width: 720px) {
+    body { padding: 16px 8px 60px; }
+    .sheet {
+      padding: 14mm 12mm;
+      font-size: 10.5pt;
+      width: 100%;
+      min-height: auto;
+    }
+    .name { font-size: 30pt; }
+    .head { grid-template-columns: 1fr; }
+    .contact { text-align: left; }
+    .meta-row { grid-template-columns: 1fr; }
+    .date-block { text-align: left; }
+    .subject { flex-direction: column; align-items: flex-start; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar" role="toolbar" aria-label="Anschreiben Werkzeuge">
+  <span class="toolbar-title"><span class="toolbar-dot"></span>Anschreiben · Pedram</span>
+  <span class="toolbar-spacer"></span>
+  <label class="font-control" for="letter-font-size">
+    Text
+    <input id="letter-font-size" type="range" min="8.5" max="11.5" step="0.1" value="11" />
+    <output id="letter-font-size-value">11.0pt</output>
+  </label>
+  <button class="btn btn--ghost" id="btn-reset" title="Auf Standard zurücksetzen">↺ Zurücksetzen</button>
+  <button class="btn btn--ghost" id="btn-clear" title="Alle Felder leeren">⌫ Leeren</button>
+  <button class="btn" id="btn-docx">↓ Als DOCX</button>
+  <button class="btn btn--primary" id="btn-print">↗ Drucken / als PDF</button>
+</div>
+
+<div class="hint">
+  <b>So benutzt du die Vorlage:</b> Klick irgendwo rein und schreib drauf los. Alle Felder werden automatisch im Browser gespeichert. Absätze im Fließtext kannst du mit <b>×</b> löschen oder unten mit <b>+ Absatz hinzufügen</b> ergänzen. Wenn dein Anschreiben fertig ist, klick <b>Drucken / als PDF</b> — die Werkzeugleiste verschwindet, A4-Layout bleibt.
+</div>
+
+<main class="sheet" id="sheet">
+  <div class="corner-mark" aria-hidden="true"></div>
+  <div class="brand-mark" aria-hidden="true">
+    <span class="brand-label">Anschreiben · 2026</span>
+  </div>
+
+  <!-- ─────────── Head ─────────── -->
+  <header class="head">
+    <div class="head-portrait-wrap">
+      <img src="pedram-portrait.jpg" alt="Pedram Berendjy Jorshery" class="head-portrait" />
+    </div>
+
+    <div>
+      <h1 class="name">Pedram<br/><em>Berendjy</em><br/><em>Jorshery</em></h1>
+      <p class="role">Full‑Stack Entwickler mit Fokus auf Human‑Centered Design.</p>
+    </div>
+
+    <div class="contact">
+      <div class="contact-label">Kontakt</div>
+      <div><a href="mailto:p.berendjy1@gmail.com">p.berendjy1@gmail.com</a></div>
+      <div>+49 173 4780574</div>
+      <div class="contact-address">Mattenmoorstraße 32D</div>
+      <div>21217 Seevetal</div>
+      <div>Deutschland</div>
+    </div>
+  </header>
+
+  <!-- ─────────── Recipient + Date ─────────── -->
+  <section class="meta-row">
+    <div class="recipient-block">
+      <span class="mono">An</span>
+      <span contenteditable="true" data-key="company" data-placeholder="Firma">MAC IT-Solutions GmbH</span>
+      <span contenteditable="true" data-key="recipient_name" data-placeholder="Ansprechperson">z. Hd. People &amp; Culture</span>
+      <span contenteditable="true" data-key="recipient_addr" data-placeholder="Straße &amp; Hausnummer">Borselstraße 20</span>
+      <span contenteditable="true" data-key="recipient_city" data-placeholder="PLZ &amp; Ort">22765 Hamburg</span>
+    </div>
+    <div class="date-block">
+      <div class="mono">Datum</div>
+      <div class="date-line" contenteditable="true" data-key="date" data-placeholder="01. Januar 2026">Hamburg, 28. Mai 2026</div>
+    </div>
+  </section>
+
+  <!-- ─────────── Subject ─────────── -->
+  <section class="subject">
+    <span class="subject-label">Betreff</span>
+    <span class="subject-text" contenteditable="true" data-key="subject" data-placeholder="Bewerbung als …">Initiativbewerbung als Werkstudent — Microsoft Business Central (Entwicklung / Technical Consulting)</span>
+  </section>
+
+  <!-- ─────────── Letter ─────────── -->
+  <p class="salutation">Sehr geehrte <em><span contenteditable="true" data-key="addressee_tail" data-placeholder="Anrede">Damen und Herren</span></em>,</p>
+
+  <div class="letter" id="letter">
+    <p contenteditable="true" data-key="p1" data-placeholder="Erster Absatz: Wer du bist, worauf du dich bewirbst.">über Marcus Möller (Werkstudent bei Ihnen) habe ich erfahren, dass Sie wieder Werkstudentinnen und Werkstudenten suchen – auch für Hamburg. Das möchte ich gern nutzen und mich initiativ als Werkstudent im Umfeld <strong>Microsoft Business Central</strong> (Entwicklung / Technical Consulting) bewerben. Ich heiße Pedram Berendjy Jorshery und studiere im Master <strong>Digital Reality</strong> an der HAW Hamburg (Schwerpunkt Human‑Computer Interaction) – mit einem praxisnahen Full‑Stack‑Hintergrund.</p>
+
+    <p contenteditable="true" data-key="p2" data-placeholder="Zweiter Absatz: Was du mitbringst — Skills, Erfahrung, Haltung.">Was ich mitbringe: strukturierte Problemlösung, saubere Umsetzung und Freude daran, mich in komplexe Domänen einzuarbeiten. Seit Januar 2022 entwickle und leite ich eigenverantwortlich <strong>Lessing Yard</strong> – eine gamifizierte Lernplattform, entstanden in Kooperation mit einer Hamburger Stadtteilschule und gefördert durch die HCU Hamburg. In einem kleinen Team verantworte ich Produkt &amp; Umsetzung end‑to‑end: Anforderungen aus Stakeholder‑Gesprächen, Prototyping in Figma, iterative Umsetzung und Betrieb. Technisch arbeite ich u. a. mit <strong>React, React Native, Node.js und MongoDB</strong> – und bin es gewohnt, Schnittstellen, Datenmodelle und Fehlerfälle so zu bauen, dass sie im Alltag von Nutzerinnen und Nutzern zuverlässig funktionieren.</p>
+
+    <p contenteditable="true" data-key="p3" data-placeholder="Dritter Absatz: Warum diese Firma — Bezug zu Stelle / Unternehmen.">MAC IT‑Solutions reizt mich, weil Sie mit <strong>Business Central</strong> an einem System arbeiten, das bei Bestandskunden direkt im Kernprozess sitzt: Anforderungen sind fachlich, technisch und kommunikativ anspruchsvoll – und genau diese Mischung liegt mir. Als Werkstudent möchte ich Sie dabei unterstützen, Erweiterungen zuverlässig umzusetzen, technische Fragestellungen sauber zu klären und Kunden‑Tickets strukturiert zu lösen. Business Central ist für mich ein neues Ökosystem, aber ich habe mehrfach gezeigt, dass ich mich schnell in neue Plattformen einarbeite und nach kurzer Zeit produktiv werde. Zusätzlich motiviert mich Ihre Kultur: kollegisches Arbeiten, gezielte Weiterbildung und ein Setup, das produktives Arbeiten im Alltag wirklich unterstützt.</p>
+
+    <p contenteditable="true" data-key="p4" data-placeholder="Vierter Absatz: Praktische Eckdaten — Standort, Verfügbarkeit, Gehalt.">Ich wohne in Seevetal bei Hamburg und kann ab <strong>01. Juli 2026</strong> starten. Als Gehaltsrahmen stelle ich mir <strong>18–19 €/Stunde</strong> vor (Master‑Niveau). Über einen kurzen Austausch zu Stundenumfang, Onboarding und dem konkreten Einsatzbereich (Entwicklung vs. Technical Consulting) freue ich mich.</p>
+
+    <p contenteditable="true" data-key="p5" data-placeholder="Abschluss-Absatz.">Wenn Sie möchten, sende ich Ihnen gern Arbeitsproben oder zeige Ihnen in einem kurzen Gespräch, wie ich an neue Systeme, Kundenanfragen und saubere Implementierungen herangehe. Ich freue mich auf Ihre Rückmeldung.</p>
+  </div>
+  <div class="letter-toolbar">
+    <button type="button" class="btn btn--ghost" id="btn-add-paragraph">+ Absatz hinzufügen</button>
+  </div>
+
+  <!-- ─────────── Closing ─────────── -->
+  <section class="closing">
+    <div class="closing-words" contenteditable="true" data-key="closing_words" data-placeholder="Viele Grüße,">Viele Grüße,</div>
+    <div class="closing-name">Pedram <em>Berendjy Jorshery</em></div>
+  </section>
+
+  <!-- ─────────── Foot ─────────── -->
+  <footer class="foot">
+    <span class="foot-mark"><span class="foot-dot"></span>Pedram Berendjy Jorshery</span>
+    <span>Anschreiben · 2026</span>
+  </footer>
+</main>
+
+<script>
+(function () {
+  const STORAGE_KEY = "pbj-cover-letter-v1";
+  const SETTINGS_KEY = "pbj-cover-letter-settings-v1";
+
+  const letterEl = document.getElementById("letter");
+  const defaultLetterOrder = ["p1", "p2", "p3", "p4", "p5"];
+  const letterDefaults = {};
+  const paragraphPlaceholders = {
+    p1: "Erster Absatz: Wer du bist, worauf du dich bewirbst.",
+    p2: "Zweiter Absatz: Was du mitbringst — Skills, Erfahrung, Haltung.",
+    p3: "Dritter Absatz: Warum diese Firma — Bezug zu Stelle / Unternehmen.",
+    p4: "Vierter Absatz: Praktische Eckdaten — Standort, Verfügbarkeit, Gehalt.",
+    p5: "Abschluss-Absatz.",
+  };
+  const letterFontInput = document.getElementById("letter-font-size");
+  const letterFontValue = document.getElementById("letter-font-size-value");
+
+  function getFields() {
+    return Array.from(document.querySelectorAll("[contenteditable='true'][data-key]"));
+  }
+
+  function getLetterParagraphs() {
+    return Array.from(letterEl.querySelectorAll(".letter-item [data-key]"));
+  }
+
+  function getLetterOrder() {
+    return getLetterParagraphs().map(el => el.dataset.key);
+  }
+
+  const defaults = {};
+
+  function structureLetterDom() {
+    Array.from(letterEl.querySelectorAll(":scope > p")).forEach(p => {
+      if (p.closest(".letter-item")) return;
+      const item = document.createElement("div");
+      item.className = "letter-item";
+      const actions = document.createElement("div");
+      actions.className = "letter-item-actions";
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "letter-btn";
+      btn.dataset.action = "remove";
+      btn.title = "Absatz löschen";
+      btn.setAttribute("aria-label", "Absatz löschen");
+      btn.textContent = "×";
+      actions.appendChild(btn);
+      letterEl.insertBefore(item, p);
+      item.appendChild(p);
+      item.appendChild(actions);
+    });
+  }
+
+  function bindEditable(el) {
+    if (el.dataset.bound) return;
+    el.dataset.bound = "1";
+    el.addEventListener("input", save);
+    el.addEventListener("blur", save);
+    el.addEventListener("paste", (e) => {
+      e.preventDefault();
+      const text = (e.clipboardData || window.clipboardData).getData("text/plain");
+      document.execCommand("insertText", false, text);
+    });
+  }
+
+  function updateLetterRemoveButtons() {
+    const count = letterEl.querySelectorAll(".letter-item").length;
+    letterEl.querySelectorAll('[data-action="remove"]').forEach(btn => {
+      btn.disabled = count <= 1;
+    });
+  }
+
+  function createLetterItem(key, html, placeholder) {
+    const item = document.createElement("div");
+    item.className = "letter-item";
+    const p = document.createElement("p");
+    p.contentEditable = "true";
+    p.dataset.key = key;
+    p.dataset.placeholder = placeholder || "Neuer Absatz …";
+    p.innerHTML = html || "";
+    const actions = document.createElement("div");
+    actions.className = "letter-item-actions";
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "letter-btn";
+    btn.dataset.action = "remove";
+    btn.title = "Absatz löschen";
+    btn.setAttribute("aria-label", "Absatz löschen");
+    btn.textContent = "×";
+    actions.appendChild(btn);
+    item.appendChild(p);
+    item.appendChild(actions);
+    return item;
+  }
+
+  function bindLetterItems() {
+    letterEl.querySelectorAll(".letter-item").forEach(item => {
+      const p = item.querySelector("[data-key]");
+      bindEditable(p);
+      const btn = item.querySelector('[data-action="remove"]');
+      btn.onclick = () => removeLetterParagraph(item);
+    });
+    updateLetterRemoveButtons();
+  }
+
+  function rebuildLetter(order, savedContent) {
+    letterEl.innerHTML = "";
+    order.forEach(key => {
+      const html = savedContent[key] ?? letterDefaults[key] ?? defaults[key] ?? "";
+      const ph = paragraphPlaceholders[key] || "Absatz …";
+      letterEl.appendChild(createLetterItem(key, html, ph));
+    });
+    bindLetterItems();
+  }
+
+  function addLetterParagraph() {
+    const key = "p_" + Date.now();
+    const item = createLetterItem(key, "", "Neuer Absatz …");
+    letterEl.appendChild(item);
+    bindLetterItems();
+    item.querySelector("[data-key]").focus();
+    saveSettings();
+    save();
+  }
+
+  function removeLetterParagraph(item) {
+    if (letterEl.querySelectorAll(".letter-item").length <= 1) return;
+    if (!confirm("Diesen Absatz wirklich löschen?")) return;
+    item.remove();
+    saveSettings();
+    save();
+    updateLetterRemoveButtons();
+  }
+
+  function resetLetterParagraphs() {
+    rebuildLetter(defaultLetterOrder, {});
+    getLetterParagraphs().forEach(el => {
+      if (defaults[el.dataset.key] != null) el.innerHTML = defaults[el.dataset.key];
+    });
+    saveSettings();
+  }
+
+  // Load saved values
+  function load() {
+    let saved = {};
+    try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); } catch (e) {}
+    let settings = {};
+    try { settings = JSON.parse(localStorage.getItem(SETTINGS_KEY) || "{}"); } catch (e) {}
+    setLetterFontSize(settings.letterFontSize || letterFontInput.value);
+    const order = settings.letterOrder;
+    if (order && order.length) {
+      const current = getLetterOrder();
+      const same = order.length === current.length && order.every((k, i) => k === current[i]);
+      if (!same) rebuildLetter(order, saved);
+    }
+    getFields().forEach(el => {
+      const k = el.dataset.key;
+      if (saved[k] != null) el.innerHTML = saved[k];
+    });
+  }
+
+  function save() {
+    const obj = {};
+    getFields().forEach(el => { obj[el.dataset.key] = el.innerHTML; });
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(obj)); } catch (e) {}
+    saveSettings();
+  }
+
+  function setLetterFontSize(value) {
+    const size = Number(value || 11).toFixed(1);
+    document.documentElement.style.setProperty("--letter-font-size", `${size}pt`);
+    letterFontInput.value = size;
+    letterFontValue.textContent = `${size}pt`;
+  }
+
+  function saveSettings() {
+    try {
+      localStorage.setItem(SETTINGS_KEY, JSON.stringify({
+        letterFontSize: letterFontInput.value,
+        letterOrder: getLetterOrder(),
+      }));
+    } catch (e) {}
+  }
+
+  letterFontInput.addEventListener("input", () => {
+    setLetterFontSize(letterFontInput.value);
+    saveSettings();
+  });
+
+  // ─────────── DOCX Export ───────────
+  function getFieldText(key) {
+    const el = document.querySelector(`[data-key="${key}"]`);
+    if (!el) return "";
+    // Get innerText to preserve line breaks but strip markup
+    return el.innerText.trim();
+  }
+
+  // Convert a contenteditable element into an array of run-config objects,
+  // honoring <strong>/<b> and <em>/<i> inside the field. Caller wraps in TextRun.
+  function elementToRunConfigs(el) {
+    if (!el) return [{ text: "" }];
+    const configs = [];
+    function walk(node, bold, italic) {
+      if (node.nodeType === Node.TEXT_NODE) {
+        if (node.textContent) {
+          configs.push({ text: node.textContent, bold, italics: italic });
+        }
+        return;
+      }
+      if (node.nodeType !== Node.ELEMENT_NODE) return;
+      const tag = node.tagName.toLowerCase();
+      const nb = bold || tag === "strong" || tag === "b";
+      const ni = italic || tag === "em" || tag === "i";
+      if (tag === "br") { configs.push({ break: true }); return; }
+      node.childNodes.forEach(c => walk(c, nb, ni));
+    }
+    el.childNodes.forEach(c => walk(c, false, false));
+    return configs.length ? configs : [{ text: "" }];
+  }
+
+  function fieldToRunConfigs(key) {
+    const el = document.querySelector(`[data-key="${key}"]`);
+    return elementToRunConfigs(el);
+  }
+
+  async function loadDocxLib() {
+    if (window.docx && window.saveAs) return { docx: window.docx, saveAs: window.saveAs };
+    // Load FileSaver + docx UMD from CDN (one-time)
+    await new Promise((res, rej) => {
+      const s = document.createElement("script");
+      s.src = "https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js";
+      s.onload = res; s.onerror = rej; document.head.appendChild(s);
+    });
+    await new Promise((res, rej) => {
+      const s = document.createElement("script");
+      s.src = "https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js";
+      s.onload = res; s.onerror = rej; document.head.appendChild(s);
+    });
+    return { docx: window.docx, saveAs: window.saveAs };
+  }
+
+  document.getElementById("btn-docx").addEventListener("click", async () => {
+    const btn = document.getElementById("btn-docx");
+    const orig = btn.textContent;
+    btn.textContent = "… lädt"; btn.disabled = true;
+    try {
+      const { docx, saveAs } = await loadDocxLib();
+      const {
+        Document, Packer, Paragraph, TextRun, AlignmentType,
+        HeadingLevel, BorderStyle, TabStopType, TabStopPosition
+      } = docx;
+
+      // Helpers
+      const mono = (text, size = 16) =>
+        new TextRun({ text, font: "Consolas", size, characterSpacing: 10, color: "5A3E2A" });
+      const body = (text, opts = {}) =>
+        new TextRun({ text, font: "Calibri", size: 22, ...opts });
+      const accent = (text, opts = {}) =>
+        new TextRun({ text, font: "Calibri", size: 18, color: "EE4814", bold: true, ...opts });
+
+      const para = (children, opts = {}) =>
+        new Paragraph({ children, spacing: { after: 120 }, ...opts });
+
+      const company       = getFieldText("company");
+      const recipientName = getFieldText("recipient_name");
+      const recipientDept = getFieldText("recipient_dept");
+      const recipientAddr = getFieldText("recipient_addr");
+      const recipientCity = getFieldText("recipient_city");
+      const date          = getFieldText("date");
+      const subject       = getFieldText("subject");
+      const addressee     = getFieldText("addressee");
+      const closingWords  = getFieldText("closing_words");
+
+      const children = [];
+
+      // Header: name (big) + role
+      children.push(new Paragraph({
+        children: [
+          new TextRun({ text: "Pedram ", font: "Cambria", size: 56, color: "1A0F08" }),
+          new TextRun({ text: "Berendjy", font: "Cambria", italics: true, size: 56, color: "EE4814" }),
+        ],
+        spacing: { after: 80 },
+      }));
+      children.push(new Paragraph({
+        children: [
+          new TextRun({ text: "Full-Stack Entwickler mit Fokus auf Human-Centered Design.", font: "Cambria", italics: true, size: 24, color: "5A3E2A" }),
+        ],
+        spacing: { after: 120 },
+      }));
+
+      // Contact block
+      const contactLines = [
+        "p.berendjy1@googlemail.com  ·  +49 173 4780574",
+        "Mattenmoorstraße 32D · 21217 Seevetal · Deutschland",
+      ];
+      contactLines.forEach(line => {
+        children.push(new Paragraph({
+          children: [new TextRun({ text: line, font: "Calibri", size: 18, color: "5A3E2A" })],
+          spacing: { after: 40 },
+        }));
+      });
+
+      // Divider
+      children.push(new Paragraph({
+        children: [new TextRun({ text: "" })],
+        border: { bottom: { color: "1A0F08", space: 4, style: BorderStyle.SINGLE, size: 12 } },
+        spacing: { after: 320 },
+      }));
+
+      // Recipient + Date row (use tab stop to right-align date)
+      const RIGHT = 9000;
+      children.push(new Paragraph({
+        children: [accent("AN"), new TextRun({ children: ["\t"] }), accent("DATUM")],
+        tabStops: [{ type: TabStopType.RIGHT, position: RIGHT }],
+        spacing: { after: 60 },
+      }));
+      // Build recipient lines paired with date on first line only
+      const recipientLines = [company, recipientName, recipientDept, recipientAddr, recipientCity].filter(Boolean);
+      recipientLines.forEach((line, i) => {
+        const runs = [body(line)];
+        if (i === 0 && date) {
+          runs.push(new TextRun({ children: ["\t"] }));
+          runs.push(new TextRun({ text: date, font: "Cambria", italics: true, size: 24 }));
+        }
+        children.push(new Paragraph({
+          children: runs,
+          tabStops: [{ type: TabStopType.RIGHT, position: RIGHT }],
+          spacing: { after: 40 },
+        }));
+      });
+
+      // Subject (boxed look — approximated with border + shading)
+      children.push(new Paragraph({
+        children: [
+          accent("BETREFF   "),
+          new TextRun({ text: subject, font: "Calibri", size: 22, bold: true }),
+        ],
+        border: {
+          top:    { color: "1A0F08", space: 6, style: BorderStyle.SINGLE, size: 8 },
+          bottom: { color: "1A0F08", space: 6, style: BorderStyle.SINGLE, size: 8 },
+          left:   { color: "1A0F08", space: 12, style: BorderStyle.SINGLE, size: 8 },
+          right:  { color: "1A0F08", space: 12, style: BorderStyle.SINGLE, size: 8 },
+        },
+        shading: { type: "clear", fill: "F1E6CF" },
+        spacing: { before: 320, after: 320 },
+      }));
+
+      // Salutation
+      children.push(new Paragraph({
+        children: [
+          new TextRun({ text: "Hallo ", font: "Cambria", italics: true, size: 32 }),
+          new TextRun({ text: addressee || "…", font: "Cambria", italics: true, size: 32, color: "EE4814" }),
+          new TextRun({ text: ",", font: "Cambria", italics: true, size: 32 }),
+        ],
+        spacing: { after: 240 },
+      }));
+
+      // Body paragraphs — preserve bold/italic inline runs
+      getLetterParagraphs().forEach(el => {
+        const configs = elementToRunConfigs(el);
+        // Skip empty fields
+        const hasContent = configs.some(c => (c.text && c.text.trim()) || c.break);
+        if (!hasContent) return;
+        const runs = configs.map(c => {
+          if (c.break) return new TextRun({ break: 1 });
+          return new TextRun({
+            text: c.text || "",
+            bold: !!c.bold,
+            italics: !!c.italics,
+            font: "Calibri",
+            size: 22,
+          });
+        });
+        children.push(new Paragraph({
+          children: runs,
+          alignment: AlignmentType.JUSTIFIED,
+          spacing: { after: 200, line: 320 },
+        }));
+      });
+
+      // Closing
+      children.push(new Paragraph({
+        children: [new TextRun({ text: closingWords || "Viele Grüße,", font: "Cambria", italics: true, size: 28 })],
+        spacing: { before: 320, after: 40 },
+      }));
+      children.push(new Paragraph({
+        children: [
+          new TextRun({ text: "Pedram ", font: "Cambria", size: 40 }),
+          new TextRun({ text: "Berendjy", font: "Cambria", italics: true, size: 40, color: "EE4814" }),
+        ],
+        spacing: { after: 0 },
+      }));
+
+      const doc = new Document({
+        creator: "Pedram Berendjy Jorshery",
+        title: "Anschreiben",
+        styles: {
+          default: { document: { run: { font: "Calibri", size: 22 } } },
+        },
+        sections: [{
+          properties: {
+            page: {
+              margin: { top: 1200, bottom: 1200, left: 1200, right: 1200 },
+            },
+          },
+          children,
+        }],
+      });
+
+      const blob = await Packer.toBlob(doc);
+      const cleanCompany = (company || "Anschreiben").replace(/[^\w\säöüÄÖÜß-]/g, "").trim().replace(/\s+/g, "_");
+      saveAs(blob, `Anschreiben_${cleanCompany}_Berendjy.docx`);
+    } catch (err) {
+      console.error(err);
+      alert("DOCX-Export fehlgeschlagen: " + err.message);
+    } finally {
+      btn.textContent = orig; btn.disabled = false;
+    }
+  });
+
+  // Auto-scale font to fit one A4 page before print
+  const sheet = document.getElementById("sheet");
+  const A4_H_PX = 297 * 3.7795276; // 297 mm in CSS px at 96 dpi
+  let _savedFontSize = null;
+
+  function scaleSheetToA4() {
+    if (_savedFontSize !== null) return; // already scaled
+    // Apply measurement class to get accurate A4-width scroll height
+    sheet.classList.add("a4-measure");
+    const h = sheet.scrollHeight;
+    sheet.classList.remove("a4-measure");
+
+    if (h > A4_H_PX) {
+      _savedFontSize = sheet.style.fontSize || "";
+      const current = parseFloat(getComputedStyle(sheet).fontSize);
+      const scaled  = Math.max(8, current * (A4_H_PX / h) * 0.96);
+      sheet.style.fontSize = scaled + "px";
+
+      // Refinement pass
+      sheet.classList.add("a4-measure");
+      if (sheet.scrollHeight > A4_H_PX) {
+        const current2 = parseFloat(getComputedStyle(sheet).fontSize);
+        sheet.style.fontSize = Math.max(8, current2 * (A4_H_PX / sheet.scrollHeight) * 0.97) + "px";
+      }
+      sheet.classList.remove("a4-measure");
+    }
+  }
+
+  function restoreSheetFont() {
+    if (_savedFontSize !== null) {
+      sheet.style.fontSize = _savedFontSize;
+      _savedFontSize = null;
+    }
+  }
+
+  // Handles both Ctrl+P and button click
+  window.addEventListener("beforeprint", scaleSheetToA4);
+  window.addEventListener("afterprint",  restoreSheetFont);
+
+  // Buttons
+  document.getElementById("btn-print").addEventListener("click", () => {
+    document.body.classList.add("is-print");
+    setTimeout(() => {
+      window.print();
+      setTimeout(() => document.body.classList.remove("is-print"), 300);
+    }, 50);
+  });
+
+  document.getElementById("btn-reset").addEventListener("click", () => {
+    if (!confirm("Auf die Standard-Vorlage zurücksetzen? Deine aktuellen Eingaben gehen verloren.")) return;
+    getFields().forEach(el => { el.innerHTML = defaults[el.dataset.key] || ""; });
+    resetLetterParagraphs();
+    setLetterFontSize(11);
+    save();
+  });
+
+  document.getElementById("btn-clear").addEventListener("click", () => {
+    if (!confirm("Alle Felder leeren?")) return;
+    getFields().forEach(el => { el.innerHTML = ""; });
+    save();
+  });
+
+  document.getElementById("btn-add-paragraph").addEventListener("click", addLetterParagraph);
+
+  structureLetterDom();
+  getFields().forEach(el => { defaults[el.dataset.key] = el.innerHTML; });
+  getLetterParagraphs().forEach(el => { letterDefaults[el.dataset.key] = el.innerHTML; });
+  getFields().forEach(bindEditable);
+  bindLetterItems();
+  load();
+})();
+</script>
+
+</body>
+</html>
