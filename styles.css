@@ -1322,8 +1322,9 @@ body::before {
     white-space: normal;
   }
   .cn-obj {
-    width: clamp(44px, 18vw, 82px) !important;
-    height: clamp(44px, 18vw, 82px) !important;
+    width: clamp(30px, 12vw, 56px) !important;
+    height: clamp(30px, 12vw, 56px) !important;
+    z-index: 5 !important;
   }
   .cn-label {
     opacity: 1;
