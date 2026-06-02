@@ -23,7 +23,7 @@ function App() {
     depth: HeroDepthType,
     split: HeroSplit,
   };
-  const activeVariant = isMobile ? "split" : heroVariant;
+  const activeVariant = isMobile ? "constellation" : heroVariant;
   const HeroVariant = heroVariants[activeVariant] || HeroSplit;
 
   return (
