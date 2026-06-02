@@ -1322,15 +1322,7 @@ body::before {
     white-space: normal;
   }
   .cn-obj {
-    width: clamp(30px, 12vw, 56px) !important;
-    height: clamp(30px, 12vw, 56px) !important;
-    z-index: -5 !important;
-    opacity: 0.55;
-  }
-  .cn-label {
-    opacity: 1;
-    transform: translateY(0);
-    font-size: 8px;
+    display: none !important;
   }
 
   .ticker {
