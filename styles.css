@@ -237,6 +237,17 @@ body::before {
   color: var(--ink);
   max-width: 460px;
   display: flex; flex-direction: column;
+  gap: 2px;
+}
+.hero-tagline span {
+  display: inline-block;
+  width: fit-content;
+  background: rgba(241,230,207,0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 1px 8px;
+  border-radius: 5px;
+  border: 1px solid rgba(26,15,8,0.06);
 }
 .hero-tagline em { color: var(--accent); }
 
