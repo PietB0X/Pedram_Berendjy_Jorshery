@@ -469,7 +469,7 @@ body::before {
 }
 
 .card-stack--compact {
-  width: clamp(340px, 34vw, 560px);
+  width: clamp(300px, 26vw, 420px);
   height: auto;
   aspect-ratio: 10 / 13;
 }
