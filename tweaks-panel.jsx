@@ -64,6 +64,14 @@ const __TWEAKS_STYLE = `
   .twk-toggle i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;
     background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}
   .twk-toggle[data-on="1"] i{transform:translateX(14px)}
+  @media (max-width:520px){
+    .twk-panel{right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));
+      width:min(280px,calc(100vw - 24px));max-height:calc(100svh - 24px);
+      transform:none}
+    .twk-hd{padding:12px 10px 12px 14px}
+    .twk-x{width:30px;height:30px}
+    .twk-seg button{min-height:30px}
+  }
 `;
 
 function useTweaks(defaults) {

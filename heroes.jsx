@@ -23,11 +23,11 @@ function useMousePosition(ref) {
     function onLeave() { setPos({ x: 0, y: 0 }); }
     const el = ref.current;
     if (!el) return;
-    el.addEventListener("mousemove", onMove);
-    el.addEventListener("mouseleave", onLeave);
+    el.addEventListener("pointermove", onMove);
+    el.addEventListener("pointerleave", onLeave);
     return () => {
-      el.removeEventListener("mousemove", onMove);
-      el.removeEventListener("mouseleave", onLeave);
+      el.removeEventListener("pointermove", onMove);
+      el.removeEventListener("pointerleave", onLeave);
     };
   }, [ref]);
   return pos;
@@ -253,7 +253,7 @@ function HeroConstellation({ t, lang }) {
                 top: `${o.y}%`,
                 width: o.size,
                 height: o.size,
-                transform: `translate3d(${tx}px, ${ty}px, 0) rotate(${rz}deg)`,
+                transform: `translate(-50%, -50%) translate3d(${tx}px, ${ty}px, 0) rotate(${rz}deg)`,
                 zIndex: Math.round(o.depth * 10),
               }}
             >

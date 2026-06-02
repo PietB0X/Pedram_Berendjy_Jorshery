@@ -110,7 +110,7 @@ function About({ t }) {
 function Projects({ t, lang }) {
   const scrollerRef = useRef(null);
   const [activeIdx, setActiveIdx] = useState(0);
-  const dragState = useRef({ down: false, x0: 0, scroll0: 0, moved: false });
+  const dragState = useRef({ down: false, x0: 0, y0: 0, scroll0: 0, moved: false, axis: null });
 
   function onDown(e) {
     const el = scrollerRef.current;
@@ -118,15 +118,24 @@ function Projects({ t, lang }) {
     dragState.current = {
       down: true,
       x0: e.clientX ?? e.touches?.[0]?.clientX ?? 0,
+      y0: e.clientY ?? e.touches?.[0]?.clientY ?? 0,
       scroll0: el.scrollLeft,
       moved: false,
+      axis: null,
     };
     el.classList.add("is-dragging");
   }
   function onMove(e) {
     if (!dragState.current.down) return;
     const x = e.clientX ?? e.touches?.[0]?.clientX ?? 0;
+    const y = e.clientY ?? e.touches?.[0]?.clientY ?? 0;
     const dx = x - dragState.current.x0;
+    const dy = y - dragState.current.y0;
+    if (!dragState.current.axis && (Math.abs(dx) > 6 || Math.abs(dy) > 6)) {
+      dragState.current.axis = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
+    }
+    if (dragState.current.axis === "y") return;
+    if (dragState.current.axis === "x" && e.cancelable) e.preventDefault();
     if (Math.abs(dx) > 4) dragState.current.moved = true;
     scrollerRef.current.scrollLeft = dragState.current.scroll0 - dx;
   }
@@ -206,6 +215,7 @@ function Projects({ t, lang }) {
         onTouchStart={onDown}
         onTouchMove={onMove}
         onTouchEnd={onUp}
+        onTouchCancel={onUp}
       >
         <div className="proj-track">
           {t.work.items.map((p, i) => (
@@ -225,6 +235,7 @@ function ProjectCard({ p, lang, idx }) {
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
 
   function onMove(e) {
+    if (e.pointerType && e.pointerType !== "mouse") return;
     const el = cardRef.current;
     if (!el) return;
     const r = el.getBoundingClientRect();
@@ -238,8 +249,8 @@ function ProjectCard({ p, lang, idx }) {
     <article
       ref={cardRef}
       className="proj-card"
-      onMouseMove={onMove}
-      onMouseLeave={onLeave}
+      onPointerMove={onMove}
+      onPointerLeave={onLeave}
       style={{
         transform: `perspective(1200px) rotateX(${tilt.y * -3}deg) rotateY(${tilt.x * 4}deg)`,
       }}
@@ -520,6 +531,7 @@ function PlayTile({ item, idx }) {
   const ref = useRef(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   function onMove(e) {
+    if (e.pointerType && e.pointerType !== "mouse") return;
     const r = ref.current.getBoundingClientRect();
     setTilt({ x: (e.clientX - r.left) / r.width - 0.5, y: (e.clientY - r.top) / r.height - 0.5 });
   }
@@ -530,8 +542,8 @@ function PlayTile({ item, idx }) {
       <div
         ref={ref}
         className="play-tile"
-        onMouseMove={onMove}
-        onMouseLeave={() => setTilt({ x: 0, y: 0 })}
+        onPointerMove={onMove}
+        onPointerLeave={() => setTilt({ x: 0, y: 0 })}
         style={{
           background: tints[idx % 4],
           color: inks[idx % 4],
@@ -651,7 +663,8 @@ function Nav({ t, lang, setLang, heroVariant, setHeroVariant }) {
   function jump(id) {
     const el = document.querySelector(`[data-section="${id}"]`);
     if (el) {
-      window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 16, behavior: "smooth" });
+      const navOffset = document.querySelector(".nav")?.offsetHeight || 0;
+      window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - navOffset - 18, behavior: "smooth" });
     }
     setOpen(false);
   }
@@ -659,6 +672,7 @@ function Nav({ t, lang, setLang, heroVariant, setHeroVariant }) {
   function cycleVariant() {
     const idx = variants.indexOf(heroVariant);
     setHeroVariant(variants[(idx + 1) % variants.length]);
+    setOpen(false);
   }
 
   return (
@@ -667,7 +681,7 @@ function Nav({ t, lang, setLang, heroVariant, setHeroVariant }) {
         <span className="logo-dot" />
         <span className="logo-text">Pedram <em className="display-italic">Berendjy Jorshery</em> </span>
       </button>
-      <ul className={`nav-list ${open ? "nav-list--open" : ""}`}>
+      <ul id="site-nav-list" className={`nav-list ${open ? "nav-list--open" : ""}`}>
         {items.map((it) => (
           <li key={it.id}>
             <button className="nav-link" onClick={() => jump(it.id)}>
@@ -675,6 +689,11 @@ function Nav({ t, lang, setLang, heroVariant, setHeroVariant }) {
             </button>
           </li>
         ))}
+        <li className="nav-mobile-variant">
+          <button className="nav-link nav-link--variant" onClick={cycleVariant}>
+            {variantLabels[heroVariant]} Hero
+          </button>
+        </li>
       </ul>
       <div className="nav-right">
         <button className="hero-variant-btn tc-mono" onClick={cycleVariant} title="Switch hero variant">
@@ -685,7 +704,13 @@ function Nav({ t, lang, setLang, heroVariant, setHeroVariant }) {
           <span>/</span>
           <button className={lang === "en" ? "on" : ""} onClick={() => setLang("en")}>EN</button>
         </div>
-        <button className="nav-menu" onClick={() => setOpen(o => !o)} aria-label="Menu">
+        <button
+          className="nav-menu"
+          onClick={() => setOpen(o => !o)}
+          aria-label="Menu"
+          aria-expanded={open}
+          aria-controls="site-nav-list"
+        >
           <span /><span /><span />
         </button>
       </div>
