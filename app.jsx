@@ -1,10 +1,19 @@
 // app.jsx — main wiring, language state, hero variant
 const { useState, useEffect } = React;
 
+const MOBILE_MQ = window.matchMedia("(max-width: 720px)");
+
 function App() {
   const [lang, setLang] = useState("de");
   const [heroVariant, setHeroVariant] = useState("split");
+  const [isMobile, setIsMobile] = useState(MOBILE_MQ.matches);
   const [showTicker, setShowTicker] = useState(true);
+
+  useEffect(() => {
+    const handler = (e) => setIsMobile(e.matches);
+    MOBILE_MQ.addEventListener("change", handler);
+    return () => MOBILE_MQ.removeEventListener("change", handler);
+  }, []);
 
   const strings = window.STRINGS[lang] || window.STRINGS.de;
 
@@ -14,7 +23,8 @@ function App() {
     depth: HeroDepthType,
     split: HeroSplit,
   };
-  const HeroVariant = heroVariants[heroVariant] || HeroSplit;
+  const activeVariant = isMobile ? "split" : heroVariant;
+  const HeroVariant = heroVariants[activeVariant] || HeroSplit;
 
   return (
     <React.Fragment>
@@ -27,7 +37,7 @@ function App() {
       />
       <main>
         <section className="hero-wrap" data-section="hero" data-screen-label="Hero">
-          <HeroVariant t={strings} lang={lang} key={heroVariant} />
+          <HeroVariant t={strings} lang={lang} key={activeVariant} />
           {showTicker && <HeroTicker items={strings.hero.ticker} />}
         </section>
         <About t={strings} />
