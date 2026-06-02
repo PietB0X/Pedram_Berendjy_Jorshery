@@ -442,11 +442,10 @@ body::before {
 /* ════════════════════════════════════════════════════════════════════════ */
 .hero-stage--split {
   min-height: 80vh;
-  padding-bottom: 160px; /* reserve space for absolute tagline */
 }
 
 .hero-stage--split .hero-split {
-  min-height: calc(80vh - 72px - 160px);
+  min-height: calc(80vh - 72px);
 }
 .hero-split {
   display: grid;
@@ -545,7 +544,6 @@ body::before {
 @media (max-width: 960px) {
   .hero-stage--split {
     min-height: auto;
-    padding-bottom: 140px;
   }
   .hero-stage--split .hero-split {
     min-height: auto;
@@ -1204,7 +1202,17 @@ body::before {
   }
 
   .hero-stage--split {
-    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 24px;
+  }
+  .hero-stage--split .hero-split {
+    order: 5;
+  }
+  .hero-stage--split .hero-tagline {
+    order: 10;
+    margin-top: 20px;
+    margin-bottom: 0;
   }
   .hero-split {
     gap: 20px;
