@@ -168,7 +168,7 @@
   }
   .head-portrait-wrap {
     align-self: stretch;
-    width: 148px;
+    width: 164px;
     flex-shrink: 0;
   }
   .head-portrait {
@@ -183,7 +183,7 @@
   .head > div:nth-child(2) {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     padding-left: 0;
   }
   .head > .contact {
@@ -226,17 +226,61 @@
     font-family: var(--serif);
     font-style: italic;
     font-weight: 400;
-    font-size: 40pt;
+    font-size: 48pt;
     line-height: 0.95;
     letter-spacing: -0.025em;
     margin: 0;
     padding-bottom: 2px;
   }
-  .name em { color: var(--accent); display: inline-block; }
-  .name em:nth-of-type(1) { transform: translateX(10px); }
-  .name em:nth-of-type(2) { transform: translateX(18px); }
+  .name-row {
+    position: relative;
+    display: block;
+    line-height: 0.95;
+  }
+  .name-layer {
+    display: block;
+    white-space: nowrap;
+    font: inherit;
+    transform-origin: left center;
+    transition: transform 0.3s cubic-bezier(.2,.7,.2,1);
+  }
+  .name-layer:not(.name-layer--top) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+  }
+  .name-layer--1 {
+    color: var(--accent);
+    opacity: 0.18;
+    transform: scale(1.18);
+    -webkit-text-stroke: 1px var(--accent);
+    z-index: 1;
+  }
+  .name-layer--2 {
+    color: var(--coral);
+    opacity: 0.28;
+    transform: scale(1.10);
+    -webkit-text-stroke: 1px var(--coral);
+    z-index: 2;
+  }
+  .name-layer--3 {
+    color: var(--yellow);
+    opacity: 0.55;
+    transform: scale(1.04);
+    -webkit-text-stroke: 1px var(--yellow);
+    z-index: 3;
+  }
+  .name-layer--top {
+    position: relative;
+    color: var(--ink);
+    opacity: 1;
+    transform: scale(1);
+    -webkit-text-stroke: 0;
+    z-index: 4;
+  }
   .role {
-    margin-top: 6px;
+    margin-top: 18px;
     font-family: var(--serif);
     font-style: italic;
     font-size: 12.5pt;
@@ -409,7 +453,7 @@
     font-family: var(--serif);
     font-style: italic;
     font-size: 14pt;
-    color: var(--ink);
+    color: var(--accent);
     line-height: 1.2;
   }
   .closing-name {
@@ -427,7 +471,7 @@
     padding-top: 6mm;
     border-top: 1px solid var(--line);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     font-family: var(--mono);
     font-size: 9pt;
@@ -435,8 +479,24 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
+  .foot-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+  }
+  .foot-year { margin-left: 0.35em; }
   .foot-mark {
     display: inline-flex; align-items: center; gap: 8px;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--line);
+  }
+  .foot-mark:hover { color: var(--accent); }
+  .foot-gh {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    color: var(--accent);
   }
   .foot-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
@@ -541,7 +601,7 @@
       width: 100%;
       min-height: auto;
     }
-    .name { font-size: 30pt; }
+    .name { font-size: 36pt; }
     .head { grid-template-columns: 1fr; }
     .contact { text-align: left; }
     .meta-row { grid-template-columns: 1fr; }
@@ -583,7 +643,26 @@
     </div>
 
     <div>
-      <h1 class="name">Pedram<br/><em>Berendjy</em><br/><em>Jorshery</em></h1>
+      <h1 class="name" aria-label="Pedram Berendjy Jorshery">
+        <span class="name-row">
+          <span class="name-layer name-layer--1" aria-hidden="true">Pedram</span>
+          <span class="name-layer name-layer--2" aria-hidden="true">Pedram</span>
+          <span class="name-layer name-layer--3" aria-hidden="true">Pedram</span>
+          <span class="name-layer name-layer--top">Pedram</span>
+        </span>
+        <span class="name-row">
+          <span class="name-layer name-layer--1" aria-hidden="true">Berendjy</span>
+          <span class="name-layer name-layer--2" aria-hidden="true">Berendjy</span>
+          <span class="name-layer name-layer--3" aria-hidden="true">Berendjy</span>
+          <span class="name-layer name-layer--top">Berendjy</span>
+        </span>
+        <span class="name-row">
+          <span class="name-layer name-layer--1" aria-hidden="true">Jorshery</span>
+          <span class="name-layer name-layer--2" aria-hidden="true">Jorshery</span>
+          <span class="name-layer name-layer--3" aria-hidden="true">Jorshery</span>
+          <span class="name-layer name-layer--top">Jorshery</span>
+        </span>
+      </h1>
       <p class="role">Full‑Stack Entwickler mit Fokus auf Human‑Centered Design.</p>
     </div>
 
@@ -644,8 +723,12 @@
 
   <!-- ─────────── Foot ─────────── -->
   <footer class="foot">
-    <span class="foot-mark"><span class="foot-dot"></span>Pedram Berendjy Jorshery</span>
-    <span>Anschreiben · 2026</span>
+    <span class="foot-meta">
+      <a class="foot-mark" href="https://pietb0x.github.io/Pedram_Berendjy_Jorshery/" target="_blank" rel="noopener noreferrer" title="Portfolio auf GitHub Pages">
+        <svg class="foot-gh" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        Portfolio
+      </a><span class="foot-year">· 2026</span>
+    </span>
   </footer>
 </main>
 
@@ -1031,7 +1114,7 @@
 
       // Closing
       children.push(new Paragraph({
-        children: [new TextRun({ text: closingWords || "Viele Grüße,", font: "Cambria", italics: true, size: 28 })],
+        children: [new TextRun({ text: closingWords || "Viele Grüße,", font: "Cambria", italics: true, size: 28, color: "EE4814" })],
         spacing: { before: 320, after: 40 },
       }));
       children.push(new Paragraph({

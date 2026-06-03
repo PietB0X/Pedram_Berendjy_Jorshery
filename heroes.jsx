@@ -389,8 +389,7 @@ function HeroMeta({ t }) {
         {t.hero.eyebrow}
       </div>
       <div className="hero-tagline">
-        <span>{t.hero.tag}</span>
-        <span>{t.hero.tag2}<em>{t.hero.tag2em}</em></span>
+        <span>{t.hero.tag}{t.hero.tag2}<em>{t.hero.tag2em}</em>{t.hero.tag2end || ""}</span>
         <span>{t.hero.tag3}</span>
       </div>
       <div className="hero-meta hero-meta--bl tc-mono">
